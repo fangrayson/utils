@@ -15,7 +15,7 @@ dev_install_requires = dev_specific_install_requires + install_requires
 
 setuptools.setup(
     name="utils",
-    version="0.0.2",
+    version="0.0.3",
     author="Fan Grayson",
     author_email="fangrayson@hotmail.com",
     description=("Random utils functions"),

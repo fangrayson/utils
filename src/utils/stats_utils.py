@@ -28,7 +28,7 @@ def trunc_multivariate_normal(
 
     Outputs
     -------
-    :sample:   np.array   Samples from a truncated multivariate normal distribution. Float is generated if size is None.
+    :sample:   np.array   Samples from a truncated multivariate normal distribution. Flat array is generated if size is None.
     """
     # Setting defaults
     if lower_bounds is None: lower_bounds = [-np.inf for x in range(len(mean))];
@@ -41,7 +41,7 @@ def trunc_multivariate_normal(
     sample = np.array([])
     # --------------------
     while len(sample) < sample_size:
-        num_to_sample = max(min_sample_rate , int(size - len(sample))) # sample at least the min_sample_rate each time
+        num_to_sample = max(min_sample_rate , int(sample_size - len(sample))) # sample at least the min_sample_rate each time
         # Produce candidate sample
         candidate_sample = np.random.multivariate_normal(
             mean = mean,
